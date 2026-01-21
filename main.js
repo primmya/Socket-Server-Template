@@ -10,7 +10,8 @@ app.get("/", (req, res) => res.send("OK"));
 const server = http.createServer(app);
 
 // ✅ WebSocket endpoint will be at /ws
-const wss = new WebSocketServer({ server, path: "/ws" });
+const wss = new WebSocketServer({ server });
+
 
 wss.on("connection", (socket) => {
   console.log("WS connected");
